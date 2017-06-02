@@ -1,0 +1,24 @@
+ 
+      <form [formGroup]="recoverForm" (ngSubmit)="recover()">
+ 
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">Email:</label>
+                
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" formControlName="email">
+                <br>
+               
+                    <button type="submit" class= "btn btn-primary">Recover</button>
+                    <a [routerLink]="['/login']">Remember password?</a>
+            </div>
+ 
+           
+      </form>
+ 
+      <div [hidden]="error == ''">
+     
+          <p >{{ error }}</p>
+        
+      </div>
+ 
+      
+      

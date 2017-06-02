@@ -1,0 +1,40 @@
+
+<form *ngIf="job" (submit)="saveJob()" class="ma-job-details-container">
+  <fieldset class="form-group">
+    <label for="jobName">Tên công việc: </label>
+    <input id="jobName" class="form-control" type="text" [disabled]="!isOwner" [(ngModel)]="job.ten_cong_viec" name="ten_cong_viec"/>
+ 
+    <label for="employer">Nhà tuyển dụng: </label>
+    <input id="employer" class="form-control" type="text" [disabled]="!isOwner" [(ngModel)]="job.nha_tuyen_dung" name="nha_tuyen_dung">
+ 
+    <label for="address">Địa chỉ: </label>
+    <input id="address" class="form-control" type="text" [disabled]="!isOwner" [(ngModel)]="job.location.name" name="location">
+    
+    <label for="description">Mô tả công việc: </label>
+    <textarea id="description" row="5" class="form-control" type="text" [disabled]="!isOwner" [(ngModel)]="job.mo_ta" name="mo_ta"></textarea>
+
+    <label for="requirement">Yêu cầu công việc: </label>
+    <textarea id="requirement" row="5" class="form-control" type="text" [disabled]="!isOwner" [(ngModel)]="job.yeu_cau" name="yeu_cau"></textarea>
+
+    <label for="phone">Điện thoại: </label>
+    <input id="phone" class="form-control" type="text" [disabled]="!isOwner" [(ngModel)]="job.dien_thoai" name="dien_thoai">
+
+    <label for="salary">Lương: </label>
+    <input id="salary" class="form-control" type="text" [disabled]="!isOwner" [(ngModel)]="job.luong" name="luong">
+    
+    <label for="salary">Expire: </label>
+    <input id="salary" class="form-control" type="text" [disabled]="!isOwner" [(ngModel)]="job.date" name="date">
+
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" [disabled]="!isOwner" [(ngModel)]="job.Public" name="public">
+        Public {{job.public}}
+      </label>
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="!isOwner">Save</button>
+    <a (click)= "goBack()">Back</a>
+    
+        
+  </fieldset></form>
+
+

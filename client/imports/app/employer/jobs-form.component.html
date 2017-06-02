@@ -1,0 +1,37 @@
+
+
+<form [formGroup]="addForm" (ngSubmit)="addJob();">
+  <fieldset class="form-group">
+    <label for="jobName">Tên công việc: </label>
+    <input id="jobName" class="form-control" type="text" formControlName="ten_cong_viec" placeholder="Job name" />
+ 
+    <label for="employer">Nhà tuyển dụng: </label>
+    <input id="employer" class="form-control" type="text" formControlName="nha_tuyen_dung" placeholder="Nha tuyen dung">
+ 
+    <label for="address">Địa chỉ: </label>
+    <input id="address" class="form-control" type="text" formControlName="location" placeholder="Location name">
+    
+    <label for="description">Mô tả công việc: </label>
+    <textarea id="description" row="5" class="form-control" type="text" formControlName="mo_ta" placeholder="mo_ta"></textarea>
+
+    <label for="requirement">Yêu cầu công việc: </label>
+    <textarea id="requirement" row="5" class="form-control" type="text" formControlName="yeu_cau" placeholder="yeu_cau"></textarea>
+
+    <label for="phone">Điện thoại: </label>
+    <input id="phone" class="form-control" type="text" formControlName="dien_thoai" placeholder="dien_thoai">
+
+    <label for="salary">Lương: </label>
+    <input id="salary" class="form-control" type="text" formControlName="luong" placeholder="luong">
+    
+    <label for="salary">Ngay het han: </label>
+    <input id="salary" class="form-control" type="text" formControlName="date" placeholder="date">
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" formControlName="public">
+        Public
+      </label>
+    </div>
+ 
+    <button type="submit" class="btn btn-primary">Add</button>
+  </fieldset>
+</form>

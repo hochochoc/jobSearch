@@ -1,0 +1,26 @@
+<div>
+    <header>Header content</header>
+    <nav class="navbar navbar-inverse">
+        <a class="navbar-brand" routerLink="/">JobCenter</a>
+        <div [hidden]="user" style="float: right">
+            <button class ="btn btn-default" [routerLink]="['/loginAdmin']" >Login as Admin</button>
+            <button class ="btn btn-default" [routerLink]="['/loginEmployer']" >Login as Employer</button>
+            <button class ="btn btn-default" [routerLink]="['/login']" >Login as Employee</button>
+            <button class ="btn btn-default" [routerLink]="['/signup']">Sign up</button>
+        </div>
+        <div [hidden]="!user" style="float: right">
+            <a>{{user | displayName}}</a>
+            <a (click)=logout()><button class="btn btn-default">logout</button></a>
+        </div>
+        </nav>
+    <div>
+    <router-outlet></router-outlet>
+    <router-outlet name='popup'></router-outlet>
+    </div>
+    <div>
+        <jobs-list></jobs-list>
+    </div>
+    <footer>
+        <div>footer text</div>
+    </footer>
+</div>

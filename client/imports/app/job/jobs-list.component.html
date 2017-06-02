@@ -1,0 +1,47 @@
+
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="jumbotron">
+      <h3>Create a new job!</h3>
+      <div [hidden]="user">You need to login to create new jobs!</div>
+    </div>
+  </div>
+</div>
+<div class="row ma-filters">
+  <div class="col-md-6">
+    <h3>All Jobs:</h3>
+    <form class="form-inline">
+      <input type="text" class="form-control" #searchtext placeholder="Search by Location">
+      <button type="button" class="btn btn-primary" (click)="search(searchtext.value)">Search</button>
+      Sort by name: <select class="form-control" #sort (change)="changeSortOrder(sort.value)">
+      <option value="1" selected>Ascending</option>
+      <option value="-1">Descending</option>
+    </select>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <ul class="list-group">
+        <li class="list-group-item">
+          <pagination-controls (pageChange)="onPageChanged($event)"></pagination-controls>
+        </li>
+
+        <li *ngFor="let job of jobs | async" class="list-group-item ma-job-item"> 
+            <div class="row">
+                <div class="col-sm-8">
+                    <h2 class="ma-job-name">
+                        <a [routerLink]= "['/job', job._id]">{{job.ten_cong_viec}}</a>
+                    </h2>
+                    @ {{job.location.name}}
+            
+                    <p class="ma-job-description">{{job.nha_tuyen_dung}}</p>
+                    <p class="ma-job-description">{{job.dien_thoai}}</p>
+                    <p class="ma-job-description">{{job.luong}}</p>
+                    <p class="ma-job-description">Ngày hết hạn: {{job.date}}</p>
+                </div>
+            </div>
+            
+

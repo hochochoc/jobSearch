@@ -1,0 +1,14 @@
+<div class="monAdmin">
+    <nav class="navbar navbar-inverse">
+        <a class="navbar-brand" routerLink="./">Dashboard</a>
+        <a class="navbar-brand" routerLink="./jobs-list">Jobs</a>
+        <a class="navbar-brand" routerLink="./users">Users</a>
+        <div [hidden]="!user" style="float: right">
+            <span>{{user.username}}</span>
+            <button (click)="logout()">Logout</button>
+        </div>
+    </nav>
+    <div class="mainadmin">
+		<router-outlet></router-outlet>
+	</div>
+</div>
